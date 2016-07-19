@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
+	"net/http"
 	"os"
+	"time"
 
 	"github.com/bearyinnovative/bcjoy/route"
 	"github.com/bearyinnovative/bcjoy/team"
@@ -19,7 +21,7 @@ func main() {
 		},
 	)
 
-	r.Run(os.Getenv("BCJOY_BIND"))
+	http.ListenAndServe(os.Getenv("BCJOY_BIND"), r)
 }
 
 func makeTeam() *team.Team {
@@ -31,6 +33,7 @@ func makeTeam() *team.Team {
 		log.Fatal(err)
 	}
 
+	time.Sleep(1 * time.Second) // ratelimit
 	if err := t.StartRTM(); err != nil {
 		log.Fatal(err)
 	}

@@ -56,7 +56,7 @@ type Badge struct {
 	ValueX int
 }
 
-func NewBadge(total, active int, setters ...badgeSetter) *Badge {
+func New(total, active int, setters ...badgeSetter) *Badge {
 	var value string
 	if active > 0 {
 		value = fmt.Sprintf("%d/%d", active, total)
