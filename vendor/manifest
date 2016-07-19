@@ -10,6 +10,15 @@
 			"notests": true
 		},
 		{
+			"importpath": "github.com/gin-gonic/contrib/renders/multitemplate",
+			"repository": "https://github.com/gin-gonic/contrib",
+			"vcs": "git",
+			"revision": "547e518040cfb96576b507d2f26779ab9c6fc829",
+			"branch": "master",
+			"path": "/renders/multitemplate",
+			"notests": true
+		},
+		{
 			"importpath": "github.com/gin-gonic/gin",
 			"repository": "https://github.com/gin-gonic/gin",
 			"vcs": "git",
