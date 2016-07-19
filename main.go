@@ -25,7 +25,10 @@ func main() {
 }
 
 func makeTeam() *team.Team {
-	t, err := team.New(os.Getenv("BCJOY_RTM_TOKEN"))
+	t, err := team.New(
+		os.Getenv("BCJOY_RTM_TOKEN"),
+		os.Getenv("BCJOY_JOIN_URL"),
+	)
 	if err != nil {
 		log.Fatal(err)
 	}

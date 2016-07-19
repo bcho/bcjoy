@@ -7,12 +7,12 @@ import (
 	"github.com/bearyinnovative/bcjoy/bearychat/rtm"
 )
 
-const DEFAULT_MESSAGE_BACKLOG = 1024
-
 type Team struct {
 	rtm      *rtm.RTM
 	rtmToken string
 	rtmUser  *model.User
+
+	joinURL string
 
 	lock               sync.RWMutex
 	totalMembersCount  int
@@ -20,7 +20,7 @@ type Team struct {
 	team               *model.Team
 }
 
-func New(rtmToken string) (*Team, error) {
+func New(rtmToken string, joinURL string) (*Team, error) {
 	rtm, err := rtm.New(rtmToken)
 	if err != nil {
 		return nil, err
@@ -29,6 +29,8 @@ func New(rtmToken string) (*Team, error) {
 	return &Team{
 		rtm:      rtm,
 		rtmToken: rtmToken,
+
+		joinURL: joinURL,
 
 		lock:               sync.RWMutex{},
 		totalMembersCount:  0,
@@ -55,6 +57,13 @@ func (t *Team) StartRTM() error {
 	}
 
 	return nil
+}
+
+func (t *Team) Team() (*model.Team, error) {
+	t.lock.RLock()
+	defer t.lock.RUnlock()
+
+	return t.team, nil
 }
 
 func (t *Team) Name() (string, error) {
@@ -117,4 +126,8 @@ func (t *Team) OnlineMembersCount() (int, error) {
 	t.lock.RLock()
 	defer t.lock.RUnlock()
 	return t.onlineMembersCount, nil
+}
+
+func (t *Team) JoinURL() (string, error) {
+	return t.joinURL, nil
 }
