@@ -86,17 +86,23 @@ func (t *Team) UpdateMembers() error {
 		return err
 	}
 
+	totalMembersCount := 0
 	onlineMembersCount := 0
 	for _, member := range members {
+		if !member.IsNormal() {
+			continue
+		}
+
+		totalMembersCount = totalMembersCount + 1
 		if member.IsOnline() {
 			onlineMembersCount = onlineMembersCount + 1
 		}
 	}
 
 	t.lock.Lock()
-	t.totalMembersCount = len(members)
+	t.totalMembersCount = totalMembersCount
 	t.onlineMembersCount = onlineMembersCount
-	defer t.lock.Unlock()
+	t.lock.Unlock()
 
 	return nil
 }
