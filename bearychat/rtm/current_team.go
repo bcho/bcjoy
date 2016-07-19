@@ -21,12 +21,11 @@ func (c *CurrentTeamService) Info() (*model.Team, error) {
 	return team, err
 }
 
-// TODO pagination
 func (c *CurrentTeamService) Members() ([]*model.User, error) {
 	client := setupClient(c.rtm.API, c.rtm.token)
 
 	members := []*model.User{}
-	_, err := client.Get("v1/current_team.members", &members)
+	_, err := client.Get("v1/current_team.members?all=true", &members)
 
 	return members, err
 }
