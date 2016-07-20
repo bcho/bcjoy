@@ -3,7 +3,7 @@ package route
 import (
 	"net/http"
 
-	"github.com/bearyinnovative/bcjoy/render"
+	"github.com/bcho/bcjoy/render"
 	"github.com/gin-gonic/gin"
 )
 

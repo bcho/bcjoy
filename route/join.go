@@ -1,7 +1,7 @@
 package route
 
 import (
-	"github.com/bearyinnovative/bcjoy/team"
+	"github.com/bcho/bcjoy/team"
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,7 +3,7 @@ package rtm
 import (
 	"fmt"
 
-	"github.com/bearyinnovative/bcjoy/bearychat/model"
+	"github.com/bcho/bcjoy/bearychat/model"
 )
 
 type UserService struct {

@@ -3,8 +3,8 @@ package team
 import (
 	"sync"
 
-	"github.com/bearyinnovative/bcjoy/bearychat/model"
-	"github.com/bearyinnovative/bcjoy/bearychat/rtm"
+	"github.com/bcho/bcjoy/bearychat/model"
+	"github.com/bcho/bcjoy/bearychat/rtm"
 )
 
 type Team struct {

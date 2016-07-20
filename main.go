@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/bearyinnovative/bcjoy/route"
-	"github.com/bearyinnovative/bcjoy/team"
+	"github.com/bcho/bcjoy/route"
+	"github.com/bcho/bcjoy/team"
 	"github.com/gin-gonic/gin"
 )
 

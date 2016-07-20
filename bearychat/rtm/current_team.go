@@ -1,6 +1,6 @@
 package rtm
 
-import "github.com/bearyinnovative/bcjoy/bearychat/model"
+import "github.com/bcho/bcjoy/bearychat/model"
 
 type CurrentTeamService struct {
 	rtm *RTM
