@@ -7,4 +7,8 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.go]
-indent_stype = tab
+indent_style = tab
+
+[*.html]
+indent_style = space
+indent_size = 2

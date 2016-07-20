@@ -15,9 +15,19 @@ func join(c *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
+	onlineMembers, err := t.OnlineMembersCount()
+	if err != nil {
+		panic(err)
+	}
+	totalMembers, err := t.TotalMembersCount()
+	if err != nil {
+		panic(err)
+	}
 
 	c.HTML(200, "join", gin.H{
-		"team":    team,
-		"joinURL": joinURL,
+		"team":          team,
+		"joinURL":       joinURL,
+		"onlineMembers": onlineMembers,
+		"totalMembers":  totalMembers,
 	})
 }
