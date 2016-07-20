@@ -43,3 +43,7 @@ func makeTeam() *team.Team {
 
 	return t
 }
+
+func init() {
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+}
