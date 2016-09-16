@@ -3,25 +3,24 @@ package team
 import (
 	"sync"
 
-	"github.com/bcho/bcjoy/bearychat/model"
-	"github.com/bcho/bcjoy/bearychat/rtm"
+	"github.com/bcho/bearychat.go"
 )
 
 type Team struct {
-	rtm      *rtm.RTM
+	rtm      *bearychat.RTMClient
 	rtmToken string
-	rtmUser  *model.User
+	rtmUser  *bearychat.User
 
 	joinURL string
 
 	lock               sync.RWMutex
 	totalMembersCount  int
 	onlineMembersCount int
-	team               *model.Team
+	team               *bearychat.Team
 }
 
 func New(rtmToken string, joinURL string) (*Team, error) {
-	rtm, err := rtm.New(rtmToken)
+	rtm, err := bearychat.NewRTMClient(rtmToken)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +58,7 @@ func (t *Team) StartRTM() error {
 	return nil
 }
 
-func (t *Team) Team() (*model.Team, error) {
+func (t *Team) Team() (*bearychat.Team, error) {
 	t.lock.RLock()
 	defer t.lock.RUnlock()
 
