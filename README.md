@@ -1,5 +1,8 @@
 # bcjoy
 
+[![Demo](http://b4fun.hbc.rocks/badge.svg)](http://b4fun.hbc.rocks/join)
+![Development Status](https://img.shields.io/badge/status-0.0.1-brightgreen.svg?style=flat-square)
+
 ## Usage
 
 ```
