@@ -2,6 +2,14 @@
 	"version": 0,
 	"dependencies": [
 		{
+			"importpath": "github.com/bcho/bearychat.go",
+			"repository": "https://github.com/bcho/bearychat.go",
+			"vcs": "git",
+			"revision": "95bc0ab51506e0215ffe39f8438be327a66fa5e5",
+			"branch": "master",
+			"notests": true
+		},
+		{
 			"importpath": "github.com/dustin/go-broadcast",
 			"repository": "https://github.com/dustin/go-broadcast",
 			"vcs": "git",
@@ -65,6 +73,14 @@
 			"repository": "https://github.com/manucorporat/stats",
 			"vcs": "git",
 			"revision": "8f2d6ace262eba462e9beb552382c98be51d807b",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/pkg/errors",
+			"repository": "https://github.com/pkg/errors",
+			"vcs": "git",
+			"revision": "17b591df37844cde689f4d5813e5cea0927d8dd2",
 			"branch": "master",
 			"notests": true
 		},
