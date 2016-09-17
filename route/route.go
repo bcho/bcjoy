@@ -15,7 +15,8 @@ func Make(middlewares ...gin.HandlerFunc) http.Handler {
 
 	e.Use(middlewares...)
 
-	e.GET("badge.svg", showBadge)
+	e.GET("badge.svg", showDefaultBadge)
+	e.GET("badge/:style", showStyledBadge)
 	e.GET("join", join)
 
 	return e
