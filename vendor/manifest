@@ -5,7 +5,7 @@
 			"importpath": "github.com/bcho/bearychat.go",
 			"repository": "https://github.com/bcho/bearychat.go",
 			"vcs": "git",
-			"revision": "95bc0ab51506e0215ffe39f8438be327a66fa5e5",
+			"revision": "0a17bb6993a6fd3e44010b113e337fd3ac47b634",
 			"branch": "master",
 			"notests": true
 		},
